@@ -1,0 +1,53 @@
+-- Dev/demo login: supervisor@callmonitoring.test / password123
+INSERT INTO users (email, password, name, role)
+VALUES (
+    'supervisor@callmonitoring.test',
+    '$2b$10$eno3jlfCyDkZTKXlUO8KsOuep11wGTZ/ANraEMO4/jz/hP5Ktbyqy',
+    'Supervisor Demo',
+    'SUPERVISOR'
+);
+
+INSERT INTO call_monitoring (call_id, call_timestamp, cs_name, customer_name, sentiment_score)
+VALUES
+('CALL-20260602-0038', TIMESTAMPTZ '2026-06-02 00:45:21+00', 'Budi Santoso', 'Wahyu Utomo', 60),
+('CALL-20260607-0039', TIMESTAMPTZ '2026-06-07 21:03:14+00', 'Dewi Anggraini', 'Joko Widodo', 24),
+('CALL-20260608-0010', TIMESTAMPTZ '2026-06-08 23:37:03+00', 'Siti Rahmawati', 'Umi Kalsum', 98),
+('CALL-20260609-0033', TIMESTAMPTZ '2026-06-09 15:35:13+00', 'Fajar Nugroho', 'Bambang Wijaya', 68),
+('CALL-20260610-0008', TIMESTAMPTZ '2026-06-10 17:21:55+00', 'Andi Firmansyah', 'Kartika Sari', 58),
+('CALL-20260613-0034', TIMESTAMPTZ '2026-06-13 19:10:25+00', 'Fajar Nugroho', 'Rizky Ramadhan', 78),
+('CALL-20260616-0030', TIMESTAMPTZ '2026-06-16 04:08:28+00', 'Andi Firmansyah', 'Eko Saputra', 54),
+('CALL-20260616-0007', TIMESTAMPTZ '2026-06-16 10:17:36+00', 'Agus Prasetyo', 'Joko Widodo', 72),
+('CALL-20260617-0014', TIMESTAMPTZ '2026-06-17 03:00:41+00', 'Andi Firmansyah', 'Kartika Sari', 91),
+('CALL-20260617-0016', TIMESTAMPTZ '2026-06-17 04:45:19+00', 'Fajar Nugroho', 'Lukman Hakim', 37),
+('CALL-20260621-0035', TIMESTAMPTZ '2026-06-21 21:31:32+00', 'Agus Prasetyo', 'Wahyu Utomo', 82),
+('CALL-20260622-0005', TIMESTAMPTZ '2026-06-22 17:39:49+00', 'Fajar Nugroho', 'Sri Wahyuni', 37),
+('CALL-20260623-0002', TIMESTAMPTZ '2026-06-23 00:07:07+00', 'Rina Wulandari', 'Yulia Sari', 26),
+('CALL-20260623-0004', TIMESTAMPTZ '2026-06-23 22:08:21+00', 'Dewi Anggraini', 'Rizky Ramadhan', 92),
+('CALL-20260624-0041', TIMESTAMPTZ '2026-06-24 22:13:28+00', 'Fajar Nugroho', 'Maya Sari', 32),
+('CALL-20260628-0040', TIMESTAMPTZ '2026-06-28 08:53:56+00', 'Fajar Nugroho', 'Fitriani', 74),
+('CALL-20260704-0037', TIMESTAMPTZ '2026-07-04 03:47:47+00', 'Dewi Anggraini', 'Sri Wahyuni', 55),
+('CALL-20260706-0022', TIMESTAMPTZ '2026-07-06 11:30:46+00', 'Agus Prasetyo', 'Dian Permata', 52),
+('CALL-20260708-0013', TIMESTAMPTZ '2026-07-08 05:45:29+00', 'Siti Rahmawati', 'Nanda Pratama', 96),
+('CALL-20260713-0036', TIMESTAMPTZ '2026-07-13 20:50:49+00', 'Fajar Nugroho', 'Citra Puspita', 35),
+('CALL-20260715-0028', TIMESTAMPTZ '2026-07-15 09:15:10+00', 'Dewi Anggraini', 'Yulia Sari', 66),
+('CALL-20260720-0029', TIMESTAMPTZ '2026-07-20 14:59:02+00', 'Budi Santoso', 'Umi Kalsum', 39),
+('CALL-20260726-0019', TIMESTAMPTZ '2026-07-26 09:37:31+00', 'Andi Firmansyah', 'Fitriani', 85),
+('CALL-20260727-0011', TIMESTAMPTZ '2026-07-27 09:19:40+00', 'Agus Prasetyo', 'Wahyu Utomo', 24),
+('CALL-20260728-0003', TIMESTAMPTZ '2026-07-28 15:56:50+00', 'Lina Kusuma', 'Ayu Lestari', 21),
+('CALL-20260729-0025', TIMESTAMPTZ '2026-07-29 04:31:14+00', 'Fajar Nugroho', 'Putri Ayu', 36),
+('CALL-20260729-0031', TIMESTAMPTZ '2026-07-29 11:38:31+00', 'Andi Firmansyah', 'Oki Setiawan', 73),
+('CALL-20260802-0001', TIMESTAMPTZ '2026-08-02 09:58:20+00', 'Budi Santoso', 'Muhammad Fadli', 67),
+('CALL-20260802-0020', TIMESTAMPTZ '2026-08-02 17:57:12+00', 'Fajar Nugroho', 'Dian Permata', 36),
+('CALL-20260804-0042', TIMESTAMPTZ '2026-08-04 07:32:27+00', 'Lina Kusuma', 'Kartika Sari', 83),
+('CALL-20260806-0026', TIMESTAMPTZ '2026-08-06 09:10:30+00', 'Budi Santoso', 'Vina Melinda', 94),
+('CALL-20260806-0017', TIMESTAMPTZ '2026-08-06 19:16:00+00', 'Andi Firmansyah', 'Ayu Lestari', 34),
+('CALL-20260808-0015', TIMESTAMPTZ '2026-08-08 11:21:35+00', 'Budi Santoso', 'Taufik Hidayat', 60),
+('CALL-20260811-0009', TIMESTAMPTZ '2026-08-11 04:23:53+00', 'Fajar Nugroho', 'Rizky Ramadhan', 99),
+('CALL-20260812-0021', TIMESTAMPTZ '2026-08-12 15:57:00+00', 'Siti Rahmawati', 'Yulia Sari', 83),
+('CALL-20260813-0023', TIMESTAMPTZ '2026-08-13 17:06:00+00', 'Dewi Anggraini', 'Citra Puspita', 29),
+('CALL-20260814-0006', TIMESTAMPTZ '2026-08-14 00:08:57+00', 'Rina Wulandari', 'Wahyu Utomo', 80),
+('CALL-20260814-0027', TIMESTAMPTZ '2026-08-14 22:57:53+00', 'Andi Firmansyah', 'Citra Puspita', 38),
+('CALL-20260815-0012', TIMESTAMPTZ '2026-08-15 09:22:47+00', 'Siti Rahmawati', 'Bambang Wijaya', 34),
+('CALL-20260817-0024', TIMESTAMPTZ '2026-08-17 05:40:43+00', 'Lina Kusuma', 'Taufik Hidayat', 82),
+('CALL-20260818-0018', TIMESTAMPTZ '2026-08-18 11:53:33+00', 'Andi Firmansyah', 'Lukman Hakim', 37),
+('CALL-20260821-0032', TIMESTAMPTZ '2026-08-21 01:55:16+00', 'Siti Rahmawati', 'Gilang Ramadhan', 23);
