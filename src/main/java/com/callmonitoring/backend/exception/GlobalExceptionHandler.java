@@ -9,6 +9,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -26,6 +27,18 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public ResponseEntity<Map<String, Object>> handleUnreadableBody(HttpMessageNotReadableException ex) {
         var error = ErrorResponse.of(HttpStatus.BAD_REQUEST, "Request body is missing or malformed");
+        return ResponseEntity.badRequest().body(error.toMap());
+    }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<Map<String, Object>> handleIllegalArgument(IllegalArgumentException ex) {
+        var error = ErrorResponse.of(HttpStatus.BAD_REQUEST, ex.getMessage());
+        return ResponseEntity.badRequest().body(error.toMap());
+    }
+
+    @ExceptionHandler(MethodArgumentTypeMismatchException.class)
+    public ResponseEntity<Map<String, Object>> handleTypeMismatch(MethodArgumentTypeMismatchException ex) {
+        var error = ErrorResponse.of(HttpStatus.BAD_REQUEST, "Invalid value for parameter '" + ex.getName() + "'");
         return ResponseEntity.badRequest().body(error.toMap());
     }
 
